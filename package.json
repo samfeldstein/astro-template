@@ -4,20 +4,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "open -na 'Firefox Developer Edition' --args --private-window http://localhost:4321/ && astro dev",
+    "start": "open -a 'Google Chrome' http://localhost:4321/ && astro dev",
     "build": "astro build && jampack ./dist",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^3.5.1",
-    "@astrojs/rss": "^4.0.7",
-    "astro": "^4.13.1",
-    "autoprefixer": "^10.4.20",
-    "cssnano": "^7.0.4",
-    "preact": "^10.22.0",
-    "sass": "^1.77.8",
-    "strtok3": "^8.0.2"
+    "astro": "^4.16.13"
   },
   "devDependencies": {
     "@divriots/jampack": "^0.25.0"
