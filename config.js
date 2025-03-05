@@ -1,11 +1,11 @@
 export const site = {
   title: "Astro Site Template",
   description:
-    "A basic template for a website built with Astro.",
+    "A template for a basic Astro site.",
   url: "https://astrositetemplate.netlify.app",
 };
 
 export const author = {
   name: "Sam Feldstein",
-  email: "samuelfeldstein@proton.me"
+  email: "sam@samfeldstein.xyz"
 }

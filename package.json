@@ -1,18 +1,20 @@
 {
-  "name": "Astro Site Template",
+  "name": "astro-site-template",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "open -a 'Google Chrome' http://localhost:4321/ && astro dev",
-    "build": "astro build && jampack ./dist",
+    "start": "open -a 'Firefox Developer Edition' http://localhost:4321/ && astro dev",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
-    "astro": "^4.16.13"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@divriots/jampack": "^0.25.0"
+    "astro": "^5.4.2",
+    "sass": "^1.85.1",
+    "cssnano": "^7.0.4",
+    "autoprefixer": "^10.4.20",
+    "sanitize-html": "^2.13.0"
   }
 }
