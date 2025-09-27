@@ -1,20 +1,17 @@
 {
-  "name": "astro-site-template",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "open -a 'Firefox Developer Edition' http://localhost:4321/ && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "astro": "^5.4.2",
-    "sass": "^1.85.1",
-    "cssnano": "^7.0.4",
-    "autoprefixer": "^10.4.20",
-    "sanitize-html": "^2.13.0"
+  "dependencies": {
+    "astro": "^5.14.1",
+    "@astrojs/sitemap": "^3.5.1",
+    "sass": "^1.91.0"
+    
   }
 }

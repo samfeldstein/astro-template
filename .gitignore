@@ -1,8 +1,12 @@
+# build output
+dist/
 # generated types
 .astro/
 
 # dependencies
 node_modules/
+# For Cloudflare
+!node_modules/.astro/
 
 # logs
 npm-debug.log*
@@ -22,5 +26,5 @@ pnpm-debug.log*
 .idea/
 
 # Other
-.vscode/
 package-lock.json
+.vscode

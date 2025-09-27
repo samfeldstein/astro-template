@@ -1,0 +1,17 @@
+---
+const image = `${Astro.site}images/open-graph-image.webp`;
+
+const { title, description, type = "website" } = Astro.props;
+---
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:image" content={image} />
+
+<!-- Twitter, etc -->
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />

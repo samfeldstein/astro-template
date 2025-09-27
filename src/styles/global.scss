@@ -1,0 +1,7 @@
+@use 'reset';
+@use 'config';
+@use 'utils';
+
+@view-transition {
+  navigation: auto;
+}

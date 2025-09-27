@@ -1,1 +1,17 @@
-<p>Built with <a href="https://astro.build">Astro</a>.</p>
+---
+import { links } from "@data/config";
+---
+
+<footer>
+  <ul>
+    <li><a href=`mailto:${links.email}`>Email</a></li>
+  </ul>
+</footer>
+
+<style lang="scss">
+  @use "@styles/utils";
+
+  footer {
+    @extend .defer;
+  }
+</style>
