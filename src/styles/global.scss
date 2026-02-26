@@ -5,3 +5,8 @@
 @view-transition {
   navigation: auto;
 }
+
+::selection {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}

@@ -5,10 +5,16 @@
   --font-medium: calc(var(--font-size-base) * 1.2);
   --font-large: calc(var(--font-size-base) * 1.4);
 
-  /* Colors */
+  // Colors
   color-scheme: light dark;
-  --white: oklch(1 0 0);
-  --black: oklch(0 0 0);
-  --text-color: light-dark(var(--black), var(--white));
-  --background-color: light-dark(var(--white), var(--black));
+  --color-1: oklch(1 0 0);
+  --color-2: oklch(0 0 0);
+
+  // Fallbacks for older browsers
+  --color-text: var(--color-2);
+  --color-background: var(--color-1);
+
+  // Override in supporting browsers
+  --color-text: light-dark(var(--color-2), var(--color-1));
+  --color-background: light-dark(var(--color-1), var(--color-2));
 }
