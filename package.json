@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "astro-template",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,9 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.14.1",
-    "@astrojs/sitemap": "^3.5.1",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.18.0",
     "sass": "^1.91.0"
-    
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.4",
+    "sass": "^1.85.1"
   }
 }

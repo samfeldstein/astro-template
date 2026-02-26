@@ -1,8 +1,6 @@
 ---
 import Base from "@layouts/Base.astro";
-import { site } from "@data/config";
+import { site } from "@/data/config.mjs";
 ---
 
-<Base title="Home" description={site.description}>
-	Hello
-</Base>
+<Base title="Home" description={site.description}> Hello </Base>

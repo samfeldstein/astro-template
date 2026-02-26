@@ -1,12 +1,12 @@
 ---
-import PreloadFonts from './PreloadFonts.astro';
-import Icons from '@components/head/Icons.astro';
-import OpenGraph from '@components/head/OpenGraph.astro';
-import { site } from '@data/config.js';
+import PreloadFonts from "./PreloadFonts.astro";
+import Icons from "@components/head/Icons.astro";
+import OpenGraph from "@components/head/OpenGraph.astro";
+import { site } from "@/data/config.mjs";
 
-import '@styles/global.scss';
+import "@styles/global.scss";
 
-const preloadFonts = [''];
+const preloadFonts = [""];
 
 const { title, description = title } = Astro.props;
 ---
