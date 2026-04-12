@@ -1,9 +1,0 @@
----
-import { site } from "@data/config.mjs";
-
-const startYear = 2026;
-const year = new Date().getFullYear();
-const yearLabel = startYear === year ? `${year}` : `${startYear} – ${year}`;
----
-
-<div>&copy; {yearLabel} {site.copyright}</div>

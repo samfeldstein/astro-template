@@ -1,12 +1,12 @@
 ---
 import Base from "@layouts/Base.astro";
-import { client } from "@data/config.mjs";
+import { me } from "@data/config.mjs";
 ---
 
 <Base title="Page Not Found">
   <h1>Page Not Found</h1>
   <p>
     It looks like this page doesn't exist. If you think this is a mistake,
-    please email us at <a href={`mailto:${client.email}`}>{client.email}</a>.
+    please email me at <a href={`mailto:${me.email}`}>{me.email}</a>.
   </p>
 </Base>
