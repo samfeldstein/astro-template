@@ -1,12 +1,24 @@
 <nav>
   <a href="/">Home</a>
+
+  <details class="dropdown">
+    <summary class="a">Strategies</summary>
+    <div class="dropdown-menu">
+      <a href="/strategies/superzone">Superzone</a>
+    </div>
+  </details>
 </nav>
 
 <style lang="scss">
-  
-  a {
+  nav {
     font-size: var(--font-small);
     text-transform: lowercase;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  a, .a {
     text-decoration: none;
     color: inherit;
 
@@ -14,6 +26,40 @@
       text-decoration: underline;
       text-decoration-thickness: 0.1em;
       text-underline-offset: 0.25em;
+    }
+  }
+
+  /* Remove the default triangle arrow */
+  summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  /* Webkit fix for arrow removal */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Basic Dropdown Styling */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Pushes it right below the text */
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      padding: 0.5em;
     }
   }
 </style>

@@ -2,15 +2,16 @@
 import Head from "@components/head/Head.astro";
 import Header from "@components/Header.astro";
 
-const { title, description } = Astro.props;
+const { title, tabTitle = title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en-us" prefix="og:https://ogp.me/ns#">
-  <Head title={title} description={description} />
+  <Head tabTitle={tabTitle} description={description} />
   <body>
     <Header />
     <main id="main">
+      <h1>{title}</h1>
       <slot />
     </main>
   </body>

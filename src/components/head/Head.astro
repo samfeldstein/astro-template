@@ -6,7 +6,7 @@ import { site } from "@data/config.mjs";
 
 import "@styles/global.scss";
 
-const { title, description = title } = Astro.props;
+const { title, tabTitle = title, description = title } = Astro.props;
 ---
 
 <head>
@@ -20,13 +20,13 @@ const { title, description = title } = Astro.props;
 
   <!-- Metadata -->
   <meta name="generator" content={Astro.generator} />
-  <title>{`${title} | ${site.title}`}</title>
+  <title>{`${tabTitle} | ${site.title}`}</title>
   <meta name="description" content={description} />
 
   <!-- Browser UI color on mobile -->
   <meta name="theme-color" content="#ffffff" />
 
-  <OpenGraph title={title} description={description} />
+  <OpenGraph title={tabTitle} description={description} />
 
   <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
   <!-- Sitemap -->

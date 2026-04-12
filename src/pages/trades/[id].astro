@@ -29,16 +29,13 @@ const entryDate = trade.data.entryDate;
 const entryTime = trade.data.entryTime;
 const exitDate = trade.data.exitDate;
 const exitTime = trade.data.exitTime;
-const direction = trade.data.direction;
 const risk = trade.data.risk;
-const pl = trade.data.pl;
 
 const { Content } = await render(trade);
 ---
 
 <Base title={title}>
   <header>
-    <h1>{title}</h1>
     <div class="stats">
       <div class="statblock">
         <div>
@@ -50,9 +47,6 @@ const { Content } = await render(trade);
         </div>
       </div>
       <div class="statblock">
-        <b>Direction: </b>
-        {direction}
-        <br />
         <b>Risk: </b>
         {risk}
       </div>
