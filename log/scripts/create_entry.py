@@ -3,6 +3,7 @@ from datetime import datetime
 from get_date import get_date
 from format_time import format_time
 from get_strategy import get_strategy
+from get_pl import get_pl
 
 TARGET_DIR = "src/trades"
 
@@ -25,13 +26,15 @@ def create_entry():
 
     risk = input("Risk: ")
 
-    pl = input("P/L: ")
+    pl = get_pl("P/L: ")
 
     # Make path and filename
     if not os.path.exists(TARGET_DIR):
         os.makedirs(TARGET_DIR)
         
-    filename = f"{ticker}-{entry_date}.md".lower()
+    # Replaces ':' with nothing ("") inside the time string
+    filename = f"{ticker}-{entry_date}-{entry_time.replace(':', '')}.md".lower()
+
     filepath = os.path.join(TARGET_DIR, filename)
 
        # Inside the f-string, we use python logic: {value if value else 'null'}    

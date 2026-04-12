@@ -1,6 +1,7 @@
 ---
 import Base from "@layouts/Base.astro";
 import Date from "@components/Date.astro";
+import Time from "@components/Time.astro";
 
 import { getCollection, render } from "astro:content";
 // 1. Generate a new path for every collection entry
@@ -12,18 +13,95 @@ export async function getStaticPaths() {
   }));
 }
 
+// 1. The Constructor
+const currencyFormatter = new Intl.NumberFormat(
+  "en-US", // The "Locale" (Controls symbols like , vs .)
+  {
+    style: "currency", // Tells it to add the symbol ($)
+    currency: "USD", // Tells it WHICH symbol to use
+  },
+);
+
 const { trade } = Astro.props;
 
 const title = trade.data.title;
-const date = trade.data.entryDate;
+const entryDate = trade.data.entryDate;
+const entryTime = trade.data.entryTime;
+const exitDate = trade.data.exitDate;
+const exitTime = trade.data.exitTime;
+const direction = trade.data.direction;
+const risk = trade.data.risk;
+const pl = trade.data.pl;
 
 const { Content } = await render(trade);
 ---
 
 <Base title={title}>
-  <header></header>
-  <h1>{title}</h1>
-  <Date date={date} />
-  <hr />
+  <header>
+    <h1>{title}</h1>
+    <div class="stats">
+      <div class="statblock">
+        <div>
+          <b>Entry: </b>
+          <Date date={entryDate} /> @ <Time time={entryTime} />
+          <br />
+          <b>Exit: </b>
+          <Date date={exitDate} /> @ <Time time={exitTime} />
+        </div>
+      </div>
+      <div class="statblock">
+        <b>Direction: </b>
+        {direction}
+        <br />
+        <b>Risk: </b>
+        {risk}
+      </div>
+    </div>
+
+    <div
+      id="pl"
+      class:list={[
+        "font-bold", // Always applied
+        {
+          win: trade.data.pl >= 0, // Applied if True
+          loss: trade.data.pl < 0, // Applied if True
+        },
+      ]}
+    >
+      {currencyFormatter.format(trade.data.pl)}
+    </div>
+  </header>
   <Content />
 </Base>
+
+<style lang="scss">
+  header {
+    border-bottom: 0.15em solid;
+    padding-bottom: 1rem;
+  }
+
+  .stats {
+    font-size: var(--font-small);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 4em;
+  }
+
+  #pl {
+    font-size: var(--font-large);
+    margin-top: 2rem;
+    font-weight: 200;
+  }
+
+  .win {
+    color: #16a34a; /* Green */
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .loss {
+    color: #dc2626; /* Red */
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+</style>
