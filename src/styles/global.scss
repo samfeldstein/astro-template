@@ -10,3 +10,30 @@
   color: var(--color-background);
   background-color: var(--color-text);
 }
+
+html {
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+body {
+
+  font-weight: 200;
+  display: grid;
+  gap: 2rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 2dvw;
+
+  font-family: var(--font-1);
+  font-size: var(--font-size-base);
+  font-optical-sizing: auto;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+small {
+  font-size: var(--font-smallest);
+}

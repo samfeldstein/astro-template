@@ -1,37 +1,11 @@
 ---
 import Base from "@layouts/Base.astro";
+import TradeList from "@components/TradeList.astro";
 import { site } from "@data/config.mjs";
-
-import { getCollection } from "astro:content";
-
-const trades = await getCollection("trades");
-
-const sortedTrades = trades.sort((a, b) => {
-  // 1. Primary Sort: Date (Newest to Oldest)
-  // Note: Ensure you match your schema field name ('date' vs 'entryDate')
-  const dateDiff = b.data.entryDate.valueOf() - a.data.entryDate.valueOf();
-
-  // If dates are different, return the result immediately
-  if (dateDiff !== 0) return dateDiff;
-
-  // 2. Secondary Sort: Time (Latest to Earliest)
-  // If dates are the same, we compare the time strings.
-  // "15:30" comes before "09:30" in a descending list.
-  return b.data.entryTime.localeCompare(a.data.entryTime);
-});
 ---
 
 <Base title="Home" description={site.description}>
-  <h1>{site.title}</h1>
-  <ul>
-    {
-      sortedTrades.map((trade) => (
-        <li>
-          <a href={`/trades/${trade.id}`}>
-            <strong>{trade.data.title}</strong>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <h1>Trades</h1>
+  <TradeList/>
 </Base>
+

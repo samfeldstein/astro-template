@@ -1,0 +1,59 @@
+---
+import Date from "./Date.astro";
+import Time from "./Time.astro";
+
+import { getCollection } from "astro:content";
+
+const trades = await getCollection("trades");
+
+const sortedTrades = trades.sort((a, b) => {
+  // 1. Primary Sort: Date (Newest to Oldest)
+  // Note: Ensure you match your schema field name ('date' vs 'entryDate')
+  const dateDiff = b.data.entryDate.valueOf() - a.data.entryDate.valueOf();
+
+  // If dates are different, return the result immediately
+  if (dateDiff !== 0) return dateDiff;
+
+  // 2. Secondary Sort: Time (Latest to Earliest)
+  // If dates are the same, we compare the time strings.
+  // "15:30" comes before "09:30" in a descending list.
+  return b.data.entryTime.localeCompare(a.data.entryTime);
+});
+---
+
+<ul>
+  {
+    sortedTrades.map((trade) => (
+      <li>
+        <a href={`/trades/${trade.id}`}>
+          <strong>{trade.data.title}</strong>&nbsp;
+          <small>
+            <Date date={trade.data.entryDate} /> @{" "}
+            <Time time={trade.data.entryTime} />
+          </small>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+      text-decoration-thickness: 0.1em;
+    }
+  }
+
+  small {
+    font-style: italic;
+  }
+</style>

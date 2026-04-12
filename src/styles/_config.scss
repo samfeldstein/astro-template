@@ -1,6 +1,7 @@
 :root {
-  --font-1: '';
-  --font-size-base: clamp(1rem, 4vw, 1.25rem);
+  --font-1: 'Oswald';
+  --font-size-base: clamp(1rem, 4vw, 1.5rem);
+  --font-smallest: calc(var(--font-size-base) * 0.7);
   --font-small: calc(var(--font-size-base) * 0.8);
   --font-medium: calc(var(--font-size-base) * 1.2);
   --font-large: calc(var(--font-size-base) * 1.4);

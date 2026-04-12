@@ -1,0 +1,16 @@
+---
+interface Props {
+  time: string; // Expects "HH:MM" (e.g. "08:46" or "14:30")
+}
+
+const { time } = Astro.props;
+
+// Split "08:46" into ["08", "46"]
+const [rawHour, minutes] = time.split(":");
+
+// Convert "08" -> 8 (Removes leading zero)
+//    "14" -> 14 (Stays the same)
+const formattedHour = parseInt(rawHour, 10);
+---
+
+<time datetime={time}>{formattedHour}:{minutes}</time>
