@@ -1,16 +1,12 @@
 ---
 interface Props {
-  time: string; // Expects "HH:MM" (e.g. "08:46" or "14:30")
+  time: string; // Expects "HH:MM"
 }
 
 const { time } = Astro.props;
 
-// Split "08:46" into ["08", "46"]
-const [rawHour, minutes] = time.split(":");
-
-// Convert "08" -> 8 (Removes leading zero)
-//    "14" -> 14 (Stays the same)
-const formattedHour = parseInt(rawHour, 10);
+// Just split the strings; no need to parse them as numbers
+const [hour, minutes] = time.split(":");
 ---
 
-<time datetime={time}>{formattedHour}:{minutes}</time>
+<time datetime={time}>{hour}:{minutes}</time>

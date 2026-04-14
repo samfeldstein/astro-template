@@ -39,7 +39,7 @@ def create_entry():
 
        # Inside the f-string, we use python logic: {value if value else 'null'}    
     content = f"""---
-title: {ticker} {strategy.capitalize()} {direction.capitalize()}
+title: {ticker} {direction.capitalize()}
 ticker: {ticker}
 entryDate: {entry_date}
 entryTime: {entry_time}
