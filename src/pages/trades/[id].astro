@@ -30,6 +30,7 @@ const entryTime = trade.data.entryTime;
 const exitDate = trade.data.exitDate;
 const exitTime = trade.data.exitTime;
 const risk = trade.data.risk;
+const strategy = trade.data.strategy
 
 const { Content } = await render(trade);
 ---
@@ -49,6 +50,9 @@ const { Content } = await render(trade);
       <div class="statblock">
         <b>Risk: </b>
         {risk}
+        <br>
+        <b>Strategy: </b>
+        {strategy}
       </div>
     </div>
 

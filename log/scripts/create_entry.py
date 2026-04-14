@@ -4,6 +4,7 @@ from get_date import get_date
 from format_time import format_time
 from get_strategy import get_strategy
 from get_pl import get_pl
+from get_direction import get_direction
 
 TARGET_DIR = "src/trades"
 
@@ -22,7 +23,7 @@ def create_entry():
 
     strategy = get_strategy()
 
-    direction = input("Direction: ")
+    direction = get_direction()
 
     risk = input("Risk: ")
 
