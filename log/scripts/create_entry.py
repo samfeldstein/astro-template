@@ -8,61 +8,43 @@ from get_direction import get_direction
 from get_ticker import get_ticker
 from get_instrument_type import get_instrument_type
 
-TARGET_DIR = "src/trades"
+DATA_FILE = "src/data/trades.yml"
 
 def create_entry():
-
     ticker = get_ticker()
     instrument = get_instrument_type()
-
     today = datetime.now().strftime("%Y-%m-%d")
     entry_date = get_date("Entry Date: ", default=today)
     entry_time = format_time(input("Entry Time: "))
-
     exit_date = get_date("Exit Date: ", default=entry_date, allow_empty=True)
-
-    raw_exit_time = input("Exit Time: ")
-    exit_time = format_time(raw_exit_time)
-
+    exit_time = format_time(input("Exit Time: "))
     strategy = get_strategy()
-
     direction = get_direction()
-
     risk = input("Risk: ")
-
     pl = get_pl("P/L: ")
+    id = f"{ticker}-{entry_date}-{entry_time.replace(':', '')}".lower()
 
-    # Make path and filename
-    if not os.path.exists(TARGET_DIR):
-        os.makedirs(TARGET_DIR)
-        
-    # Replaces ':' with nothing ("") inside the time string
-    filename = f"{ticker}-{entry_date}-{entry_time.replace(':', '')}.md".lower()
-
-    filepath = os.path.join(TARGET_DIR, filename)
-
-       # Inside the f-string, we use python logic: {value if value else 'null'}    
-    content = f"""---
-title: {ticker} {direction.capitalize()}
-ticker: {ticker}
-instrument: {instrument}
-entryDate: {entry_date}
-entryTime: {entry_time}
-exitDate: {exit_date if exit_date else 'null'}
-exitTime: {exit_time}
-strategy: {strategy}
-direction: {direction}
-risk: {risk}
-pl: {pl}
----
-
+    entry = f"""
+- id: {id}
+  title: {ticker} {direction.capitalize()}
+  ticker: {ticker}
+  instrument: {instrument}
+  entryDate: {entry_date}
+  entryTime: {entry_time}
+  exitDate: {exit_date if exit_date else 'null'}
+  exitTime: {exit_time}
+  strategy: {strategy}
+  direction: {direction}
+  risk: {risk}
+  pl: {pl}
+  notes: |
 """
 
-    # Write the file
     try:
-        with open(filepath, "w") as file:
-            file.write(content)
-        print(f"✅ Created: {filepath}")
+        os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+        with open(DATA_FILE, "a") as file:
+            file.write(entry)
+        print(f"✅ Entry added to {DATA_FILE}")
     except Exception as e:
         print(f"❌ Error: {e}")
 

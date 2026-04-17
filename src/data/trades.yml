@@ -3,13 +3,34 @@
   ticker: SPY
   instrument: Option
   entryDate: '2026-04-16'
-  entryTime: '08: 28'
+  entryTime: '08:28'
   exitDate: '2026-04-16'
-  exitTime: '09: 09'
+  exitTime: '09:09'
   strategy: Superzone
   direction: Long
   risk: 2.7
   pl: 473
+  notes: |
+    In a 1hr uptrend. No obvious resistance from higher timeframes, which are also trending up.
+
+    Overlapping FVGs on Daily, 4h, 1h and 5m. Price pulled into the overlap and I entered.
+
+    Also first hourly candle closed above 700 on which is a major level and an all-time high.
+
+    Could have taken a lot more, close to twice as much. Tried to move SL higher after initial move but it triggered right away.
+
+- id: spy-2026-04-16-1034
+  title: SPY Long
+  ticker: SPY
+  instrument: Option
+  entryDate: 2026-04-16
+  entryTime: 10:34
+  exitDate: 2026-04-16
+  exitTime: 12:53
+  strategy: Alone97
+  direction: Long
+  risk: 1
+  pl: 869.00
   notes: |
     Tried to parse the chart for an MSS according to Alone's strat. Got in way too early. Price fell into overlapping zones on 1h and 5m. I loaded up and that's the only way I made so much. Otherwise gains would have been pretty sad.
 
