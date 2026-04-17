@@ -1,0 +1,22 @@
+- id: spy-2026-04-16-0828
+  title: SPY Long
+  ticker: SPY
+  instrument: Option
+  entryDate: '2026-04-16'
+  entryTime: '08: 28'
+  exitDate: '2026-04-16'
+  exitTime: '09: 09'
+  strategy: Superzone
+  direction: Long
+  risk: 2.7
+  pl: 473
+  notes: |
+    Tried to parse the chart for an MSS according to Alone's strat. Got in way too early. Price fell into overlapping zones on 1h and 5m. I loaded up and that's the only way I made so much. Otherwise gains would have been pretty sad.
+
+    Could have made more, at least $1200 and maybe closer to $1600 if I'd set stop at nearest resistance. But I started to think it was a dumb trade and closed early.
+
+    Jury out on whether it's worth the mental effort to find Alone's MSS or just look for overlapping zones, enter, and set a stop just below them.
+
+    Leveraged like $3200 but worth noting that Forex would have required twice as much to make half as much.
+
+    Anyway overall kind of a stupid trade. Maybe not if I'd gotten in at the overlapping zones the first time. This was a paper trade. Probably (hopefully) would not have done this with real money.

@@ -5,12 +5,15 @@ from format_time import format_time
 from get_strategy import get_strategy
 from get_pl import get_pl
 from get_direction import get_direction
+from get_ticker import get_ticker
+from get_instrument_type import get_instrument_type
 
 TARGET_DIR = "src/trades"
 
 def create_entry():
 
-    ticker = input("Ticker: ").strip().upper()
+    ticker = get_ticker()
+    instrument = get_instrument_type()
 
     today = datetime.now().strftime("%Y-%m-%d")
     entry_date = get_date("Entry Date: ", default=today)
@@ -42,6 +45,7 @@ def create_entry():
     content = f"""---
 title: {ticker} {direction.capitalize()}
 ticker: {ticker}
+instrument: {instrument}
 entryDate: {entry_date}
 entryTime: {entry_time}
 exitDate: {exit_date if exit_date else 'null'}

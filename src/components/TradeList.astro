@@ -4,7 +4,7 @@ import Time from "./Time.astro";
 
 import { getCollection } from "astro:content";
 
-const trades = await getCollection("trades");
+const trades = await getCollection("tradesData");
 
 const sortedTrades = trades.sort((a, b) => {
   // 1. Primary Sort: Date (Newest to Oldest)
@@ -37,7 +37,7 @@ const sortedTrades = trades.sort((a, b) => {
   }
 </ul>
 
-<style>
+<style lang="scss">
   ul {
     list-style: none;
   }

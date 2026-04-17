@@ -1,23 +1,33 @@
 // https://docs.astro.build/en/reference/modules/astro-content/#definecollection
 
-import { defineCollection } from 'astro:content';
+import { defineCollection, reference } from 'astro:content';
 import { z } from 'astro/zod';
-import { glob } from 'astro/loaders';
+import { file } from 'astro/loaders';
+// import { glob } from 'astro/loaders';
 
-const trades = defineCollection({
-  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/trades' }),
+const tradesData = defineCollection({
+  loader: file("src/data/trades.yml"),
   schema: z.object({
+    id: z.string(),
     title: z.string(),
     ticker: z.string(),
-    entryDate: z.date(),
+    entryDate: z.coerce.date(),
     entryTime: z.string(),
-    exitDate: z.date().optional(),
+    exitDate: z.coerce.date().optional(),
     exitTime: z.string(),
     strategy: z.string(),
     direction: z.string(),
     risk: z.number(),
-    pl: z.number()
+    pl: z.number(),
+    notes: z.string(),
   }),
 });
 
-export const collections = { trades };
+// const tradeNotes = defineCollection({
+//   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/trades' }),
+//   schema: z.object({
+//     id: reference('tradesData'),
+//   }),
+// });
+
+export const collections = { tradesData };

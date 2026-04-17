@@ -3,10 +3,12 @@ import Base from "@layouts/Base.astro";
 import Date from "@components/Date.astro";
 import Time from "@components/Time.astro";
 
-import { getCollection, render } from "astro:content";
+import { marked } from "marked";
+
+import { getCollection } from "astro:content";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const trades = await getCollection("trades");
+  const trades = await getCollection("tradesData");
   return trades.map((trade) => ({
     params: { id: trade.id },
     props: { trade },
@@ -30,9 +32,7 @@ const entryTime = trade.data.entryTime;
 const exitDate = trade.data.exitDate;
 const exitTime = trade.data.exitTime;
 const risk = trade.data.risk;
-const strategy = trade.data.strategy
-
-const { Content } = await render(trade);
+const strategy = trade.data.strategy;
 ---
 
 <Base title={title}>
@@ -50,7 +50,7 @@ const { Content } = await render(trade);
       <div class="statblock">
         <b>Risk: </b>
         {risk}
-        <br>
+        <br />
         <b>Strategy: </b>
         {strategy}
       </div>
@@ -69,7 +69,7 @@ const { Content } = await render(trade);
       {currencyFormatter.format(trade.data.pl)}
     </div>
   </header>
-  <Content />
+  {trade.data.notes && <div set:html={marked(trade.data.notes)} />}
 </Base>
 
 <style lang="scss">

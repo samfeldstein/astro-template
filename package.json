@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "astro": "^6.1.5",
+    "marked": "^18.0.1",
     "sass": "^1.91.0"
   },
   "devDependencies": {
