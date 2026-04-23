@@ -6,7 +6,6 @@
     <summary class="a">Strategies</summary>
     <div class="dropdown-menu">
       <a href="/strategies/superzone">Superzone</a>
-      <a href="/strategies/ideas">Ideas</a>
     </div>
   </details>
 </nav>
@@ -24,7 +23,6 @@
   .a {
     font-variant: normal;
     text-decoration: none;
-    color: inherit;
 
     &:hover {
       text-decoration: underline;
@@ -53,10 +51,10 @@
     position: absolute;
     top: 100%; /* Pushes it right below the text */
     left: 0;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--color-background);
+    border: 1px solid var(--color-text);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px var(--color-text);
     min-width: 150px;
     z-index: 10;
     display: flex;

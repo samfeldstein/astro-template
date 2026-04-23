@@ -2,9 +2,30 @@
 import Base from "@layouts/Base.astro";
 import TradeList from "@components/TradeList.astro";
 import { site } from "@data/config.mjs";
+import { totalPL } from "@data/tradestats";
+const plClass = totalPL > 0 ? "green" : "red";
 ---
 
 <Base tabTitle="Home" description={site.description}>
   <h1>Trades</h1>
-  <TradeList/>
+  <div>
+    <b class={plClass}
+      >${totalPL.toLocaleString(undefined, { minimumFractionDigits: 2 })}</b
+    >
+  </div>
+  <TradeList />
 </Base>
+
+<style>
+  div {
+    text-align: right;
+    font-size: var(--font-large);
+  }
+  
+  .green {
+    color: green;
+  }
+  .red {
+    color: red;
+  }
+</style>

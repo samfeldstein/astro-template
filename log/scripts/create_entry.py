@@ -7,6 +7,7 @@ from get_pl import get_pl
 from get_direction import get_direction
 from get_ticker import get_ticker
 from get_instrument_type import get_instrument_type
+from calc_total_pl import calc_total_pl
 
 DATA_FILE = "src/data/trades.yml"
 
@@ -25,6 +26,7 @@ def create_entry():
     id = f"{ticker}-{entry_date}-{entry_time.replace(':', '')}".lower()
 
     entry = f"""
+
 - id: {id}
   title: {ticker} {direction.capitalize()}
   ticker: {ticker}
@@ -50,3 +52,4 @@ def create_entry():
 
 if __name__ == "__main__":
     create_entry()
+

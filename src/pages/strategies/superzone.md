@@ -1,15 +1,15 @@
 ---
 layout: "@layouts/Strategy.astro"
-title: Superzone Trading Strategy
-description: The Superzone trading strategy takes trades that fall within overlapping orders blocks and supply and demand zones across multiple timeframes.
+title: Superzone Strategy
+description: The Superzone trading strategy takes trades that fall within overlapping support and resistance areas across multiple timeframes.
 ---
 
-Turn on [BigBeluga Supply and Demand Zones](https://www.tradingview.com/script/I0o8N7VW-Supply-and-Demand-Zones-BigBeluga/), [LuxAlgo Order Blocks](https://www.luxalgo.com/library/indicator/order-block-detector/), and [LuxAlgo Fair Value Gaps](https://www.luxalgo.com/library/indicator/fair-value-gap/). Trace zones on 1hr, 15m, 5m, and 1m. (I'm looking to open and close trades in a few hours or less, so these ranges are the most relevant.)
+Turn on [LuxAlgo Smart Money Concepts](https://www.luxalgo.com/library/indicator/smart-money-concepts-smc/) to find order blocks. Use [LuxAlgo Fair Value Gaps](https://www.luxalgo.com/library/indicator/fair-value-gap/) to find FVGs. (LuxAlgo SMC has an FVG detector, but it seems less accurate.) 
 
-A **superzone** is any area where two or more zones or gaps overlap on two or more timeframes.
+Open the daily chart draw a horizontal line on the top border of the nearest support zone and/or the bottom border of the nearest resistance zone.
 
-Enter on 1m chart at the strongest superzone. _Price must be in a 1m zone, show a [WillyAlgo PrecSniper reversal](https://www.tradingview.com/script/IZj18oYZ-Precision-Sniper-WillyAlgoTrader/), or show a reversal pattern_.
+Repeat for the 4h, 1h, and 5m charts. The area between the lines is your entry zone.
 
-Set SL past superzone. When prices hits next support/resistance, move stop to a point where you can make the most profit without triggering early.
+In an uptrend, the ideal entry is the bottom of the zone. In a downtrend, the ideal entry is the top of the zone. Two or more lines close together indicate overlap between timeframes and also might be a good entry.
 
-Repeat until 1m shows reversal.
+*You must have at least a 5m line and one line from a higher timeframe. If you have just a 5m line, you don't have higher timeframes backing you. If you just have a higher timeframe, your entry will not be precise.*

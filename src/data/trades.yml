@@ -2,10 +2,10 @@
   title: SPY Long
   ticker: SPY
   instrument: Option
-  entryDate: '2026-04-16'
-  entryTime: '08:28'
-  exitDate: '2026-04-16'
-  exitTime: '09:09'
+  entryDate: 2026-04-16
+  entryTime: 08:28
+  exitDate: 2026-04-16
+  exitTime: 09:09
   strategy: Superzone
   direction: Long
   risk: 2.7
@@ -41,3 +41,92 @@
     Leveraged like $3200 but worth noting that Forex would have required twice as much to make half as much.
 
     Anyway overall kind of a stupid trade. Maybe not if I'd gotten in at the overlapping zones the first time. This was a paper trade. Probably (hopefully) would not have done this with real money.
+
+- id: spy-2026-04-17-1121
+  title: SPY Long
+  ticker: SPY
+  instrument: Option
+  entryDate: 2026-04-17
+  entryTime: 11:21
+  exitDate: 2026-04-17
+  exitTime: 11:21
+  strategy: Superzone
+  direction: Long
+  risk: 2
+  pl: -105.00
+  notes: |
+    Got in too early. Also should not have picked same day expiry at all, much less this late on Friday.
+
+- id: spy-2026-04-17-1122
+  title: SPY Long
+  ticker: SPY
+  instrument: Option
+  entryDate: 2026-04-17
+  entryTime: 11:22
+  exitDate: 2026-04-17
+  exitTime: 11:34
+  strategy: Superzone
+  direction: Long
+  risk: 4.46
+  pl: -100
+  notes: |
+    Decent entry as you can see from PL but picked wrong expiry cause I'm dumb.
+  
+- id: spy-2026-04-20-0825
+  title: SPY Long
+  ticker: SPY
+  instrument: Option
+  entryDate: 2026-04-20
+  entryTime: 08:25
+  exitDate: 2026-04-20
+  exitTime: 00:00
+  strategy: Alone97
+  direction: Long
+  risk: 2
+  pl: 0.00
+  notes: |
+    Crossover between 4hr, 1hr, and 5m FVGs. Got what I think is a 5m bearish invalidation MSS, but might be too shallow. See image. Possible I should have waited for close above 710.15, then looked for an entry.
+
+    The other mistake we might have made is that the 1hr is showing a bearish continuation. So even if this is a pullback on 4hr, we should have waited for favorable MSS to form on the 1hr before entering.
+
+- id: spy-2026-04-22-0930
+  title: SPY Short
+  ticker: SPY
+  instrument: Option
+  entryDate: 2026-04-22
+  entryTime: 09:30
+  exitDate: 2026-04-22
+  exitTime: 09:36
+  strategy: Lines
+  direction: Short
+  risk: 10
+  pl: 10096.00
+  notes: |
+    Sort of goofing around, but you can't argue with results? I had my line pattern and entered when price broke between the top two lines. I was trading with fake money, so I took a fairly large position relative to my actual capital. Likely not a trade I would've taken with real money. That said, because my position was so large price did not have to move very far in order to make a really good return.
+    
+    My risk reward was great no matter what the position size, but only because I kept increasing my position as price moved further into the zone, thus reducing the distance to my stop loss and increasing the distance to minimum profit level.
+
+    Wish I'd done my manual trailing stop thing instead of getting out. Could have made double by now. 
+
+    There was a bunch of support from 1m, but none from 5m or 15m, so figured it wouldn't matter in the near near term, and was right. Suspect that if given enough time price will move all the way to 15m support. Another reason to do manual trailing stop.
+
+    But hey, this was a real trade and I'll take it.
+
+- id: spy-2026-04-23-0759
+  title: SPY Short
+  ticker: SPY
+  instrument: Option
+  entryDate: 2026-04-23
+  entryTime: 07:59
+  exitDate: 2026-04-23
+  exitTime: 08:02
+  strategy: Lines
+  direction: Short
+  risk: 6.7
+  pl: 940.00
+  notes: |
+    Wicked off a 5m/1m resistance. Missed that entry, but kept going and formed new 1m resistance. Had about a dollar to the next support, so more than enough to make some money. 
+
+    Was 1m support right below but figured 5m/1m resistance plus formation of new 1m resistance overruled that.
+
+    Tried manual trailing stop this time, so could have taken something closer to $1300, but I'm never going to complain about making $900+ in a day.

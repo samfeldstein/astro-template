@@ -1,7 +1,8 @@
 def get_strategy():
     strategies = [
         "Superzone",
-        "Alone97"
+        "Alone97",
+        "Lines"
     ]
     
     print("\n--- Select Strategy ---")

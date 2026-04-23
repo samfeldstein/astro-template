@@ -1,0 +1,1 @@
+export const totalPL = 12173.0;
